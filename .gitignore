@@ -1,0 +1,9 @@
+# Generated packages
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Excel temp
+.~lock.*
