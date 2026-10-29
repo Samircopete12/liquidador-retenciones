@@ -74,6 +74,7 @@ Este proyecto traduce la teoría a una **tabla de decisión con memoria**: qué 
 | `Estudio_Motor_Liquidador.pdf` | Documento de estudio del motor (`motor_liquidador.py`): porqué de cada librería y regla tributaria, arquitectura, tutorial por línea de comandos y casos. |
 | `ejemplo_video_retencion.json` + `tablas_video_barranquilla.json` | JSON del ejemplo del video (45 televisores × $2.000.000) y tablas con la reteICA de Barranquilla. |
 | `Guia_JSON_Entrada_Ejercicio_Video.pdf` + `plantilla_ejercicio_video.json` | Guía para armar el JSON de entrada y plantilla para resolver el primer ejemplo del video (compra de $63.300.000). |
+| `docs/decks/Deck_Retenciones_5_Slides.pdf` + `.pptx` | Presentación corta de 5 diapositivas para portafolio y entrevista. |
 | `build_control.py` | Script que regenera el Excel y el CSV. |
 | `README.md` | Este documento. |
 
