@@ -195,6 +195,8 @@ Cada línea debe tener: cuenta, nombre, débito, crédito, tercero, centro de co
 
 Esta tabla es el corazón del diseño. Cada fila es un escenario; el sistema debe encontrar la fila que corresponda.
 
+> La versión detallada, con la tabla comprador–vendedor del video y su lectura crítica (SIMPLE, autorretenedores, exclusiones y casos especiales), está en [`matriz-comprador-vendedor.md`](matriz-comprador-vendedor.md).
+
 | # | Comprador | Proveedor | Concepto | ¿Aplica RF? | ¿Aplica reteIVA? | ¿Aplica reteICA? |
 |---|---|---|---|---|---|---|
 | 1 | Agente RF, no reteIVA, no reteICA | Declarante | Servicio general | 4% | No | No |
@@ -253,7 +255,7 @@ IVA = base × tarifa. Si el total incluye IVA, base = total / (1 + tarifa). Vali
 ### R9. ReteIVA
 
 ReteIVA = IVA × 15%, solo si:
-- El comprador es agente de reteIVA.
+- El comprador es agente de reteIVA (general o por un caso especial: compra a SIMPLE, servicios de no residentes, designación).
 - El proveedor es responsable de IVA.
 - La operación está gravada.
 - La base supera el mínimo (2 UVT servicios, 10 UVT compras).

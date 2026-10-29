@@ -1,0 +1,71 @@
+{
+  "_notas": [
+    "Ejemplo del video 'RETENCIÓN EN LA FUENTE: Casos prácticos y contabilización paso a paso' (youtube.com/watch?v=I36dS7H-xK8, minuto 15:36).",
+    "El video contabiliza la VENTA desde los libros del vendedor (ingreso 4135, anticipos 1355xx).",
+    "Este archivo reproduce la MISMA operación desde los libros del COMPRADOR (Almacenes Éxito del video, aquí 'Almacenes El Cliente S.A.'), que es lo que liquida motor_liquidador.py: inventario 1435, IVA descontable 240805, proveedores 220505 y pasivos de retención 2365/2367/2368.",
+    "Datos del video: venta de 45 televisores a $2.000.000 = $90.000.000 + IVA 19% = $17.100.000.",
+    "Retenciones que practica el comprador: retefuente 2,5% ($2.250.000), reteICA Barranquilla 12,5 por mil ($1.125.000) y reteIVA 15% del IVA ($2.565.000).",
+    "Neto que recibe el vendedor: 90.000.000 + 17.100.000 - 2.250.000 - 1.125.000 - 2.565.000 = $101.160.000 ('101 millones 160.000 pesos' en el video).",
+    "La tarifa de reteICA de Barranquilla (12,5 por mil para compras) no viene en las tablas por defecto: se carga con el archivo tablas_video_barranquilla.json usando --tablas."
+  ],
+  "comprador": {
+    "nit": "800.123.456-7",
+    "razon_social": "Almacenes El Cliente S.A.",
+    "tipo": "Jurídica",
+    "agente_retefuente": true,
+    "agente_reteiva": true,
+    "agente_reteica": true,
+    "municipio": "Barranquilla",
+    "responsable_iva": true,
+    "obligado_contabilidad": true,
+    "regimen": "Ordinario",
+    "direccion": "Calle 45 # 12-34, Barranquilla",
+    "gran_contribuyente": true,
+    "entidad_estatal": false,
+    "emisor_tarjetas": false
+  },
+  "proveedor": {
+    "nit": "900.987.654-3",
+    "razon_social": "Comercializadora de Televisores S.A.S.",
+    "tipo": "Jurídica",
+    "residente": true,
+    "declarante": true,
+    "responsable_iva": true,
+    "simple": false,
+    "autorretenedor": false,
+    "autorretencion_especial": false,
+    "gran_contribuyente": false,
+    "actividad_ciiu": "4645",
+    "municipio": "Barranquilla",
+    "rut_recibido": true,
+    "soporte_no_declarante": true,
+    "actividad_gravada_ica": true
+  },
+  "operaciones": [
+    {
+      "tipo_documento": "Factura electrónica",
+      "numero": "FV-2026-0900",
+      "fecha_emision": "2026-10-28",
+      "fecha_pago": "2026-10-28",
+      "concepto": "Compra de bienes",
+      "descripcion": "Compra de 45 televisores a $2.000.000 c/u (ejemplo del video, minuto 15:36)",
+      "base": "90000000",
+      "tarifa_iva": "0.19",
+      "iva": null,
+      "total": null,
+      "total_incluye_iva": false,
+      "descuentos": "0",
+      "moneda": "COP",
+      "trm": null,
+      "forma_pago": "Contado",
+      "valor_pagado": null,
+      "retencion_ya_practicada": false,
+      "factura_validada": true,
+      "orden_compra": true,
+      "acta_recibido": true,
+      "periodo_cerrado": false,
+      "iva_excluido": false,
+      "centro_costo": "COMPRAS"
+    }
+  ]
+}

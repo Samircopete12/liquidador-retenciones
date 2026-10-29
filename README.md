@@ -1,6 +1,6 @@
 # Liquidador de retenciones Colombia 2026 — diseño y 16 casos de control
 
-**Estado:** diseño funcional y casos de prueba completos. Implementación automática: pendiente.  
+**Estado:** motor implementado y probado con los 12 casos del diseño funcional y los 16 casos de control. Listo para operar **con validación humana**; la firma de tablas oficiales y la marcha blanca son pasos de producción.
 **Corte normativo:** 23/10/2026.  
 **UVT 2026:** $52.374.  
 **Autor:** Kelvis Samir Copete Córdoba.
@@ -68,6 +68,12 @@ Este proyecto traduce la teoría a una **tabla de decisión con memoria**: qué 
 | `docs/casos-practicos.md` | 16 casos resueltos con asientos completos. |
 | `docs/diseno-funcional.md` | Diseño funcional del liquidador: entradas, reglas, validaciones y pruebas. |
 | `docs/tabla-retenciones-2026.md` | Tabla de referencia de conceptos, tarifas y mínimos. |
+| `docs/matriz-comprador-vendedor.md` | Matriz comprador–vendedor, tipos de retención y lectura crítica de la tabla del video. |
+| `liquidador.ipynb` | Implementación ejecutable del diseño funcional: motor, asientos, certificados, auditoría y 12 casos de prueba. |
+| `motor_liquidador.py` | El mismo motor como script de línea de comandos: JSON de entrada, JSON/CSV de salida, repositorio de duplicados y tablas personalizables. |
+| `Estudio_Motor_Liquidador.pdf` | Documento de estudio del motor (`motor_liquidador.py`): porqué de cada librería y regla tributaria, arquitectura, tutorial por línea de comandos y casos. |
+| `ejemplo_video_retencion.json` + `tablas_video_barranquilla.json` | JSON del ejemplo del video (45 televisores × $2.000.000) y tablas con la reteICA de Barranquilla. |
+| `Guia_JSON_Entrada_Ejercicio_Video.pdf` + `plantilla_ejercicio_video.json` | Guía para armar el JSON de entrada y plantilla para resolver el primer ejemplo del video (compra de $63.300.000). |
 | `build_control.py` | Script que regenera el Excel y el CSV. |
 | `README.md` | Este documento. |
 
@@ -85,7 +91,7 @@ Este proyecto traduce la teoría a una **tabla de decisión con memoria**: qué 
 | Retefuente honorarios | 11% jurídica declarante / 10% no declarante |
 | Retefuente compras | 2,5% declarante / 3,5% no declarante |
 | Retefuente arrendamiento de inmueble | 3,5%; mínimo 10 UVT |
-| ReteIVA | 15% del IVA, solo si el comprador es agente de reteIVA |
+| ReteIVA | 15% del IVA, solo si el comprador es agente de reteIVA para esa operación (incluye compras a SIMPLE) |
 | ReteICA | Tarifa municipal; caso 11 usa 0,966% de Bogotá como ejemplo |
 | Redondeo | Definir política y mantenerla; el caso 4 muestra valores exactos y redondeo a peso |
 
@@ -263,19 +269,30 @@ Cada caso debe generar:
 
 > Diseñé la lógica de liquidación para 16 casos de retención en Colombia 2026 (IVA, retefuente, reteIVA y reteICA), con tabla de control, asientos, documentos y criterios de aceptación.
 
-Cuando esté implementado, se puede agregar:
+Implementación actual:
 
-> Implementé un liquidador en Python/Excel con 16 pruebas automatizadas y validación de mínimos, agentes y condiciones del proveedor.
+> Implementé un liquidador en Python y Jupyter con 12 pruebas del diseño funcional y 16 casos de control, validación de mínimos, agentes, condiciones del proveedor, auditoría y salidas JSON/CSV.
 
 ---
 
-## 12. Siguiente paso
+## 12. Estado de validación y pasos para producción
 
-1. Implementar el cálculo en Python o Excel.
-2. Cargar los 16 casos como pruebas.
-3. Verificar que los 16 chequeos den 0.
-4. Publicar el repositorio.
-5. Agregar el enlace a la CV.
+El motor está listo para **marcha blanca y doble verificación**. Para llamarlo “producción” falta:
+
+1. Cargar y firmar las tablas oficiales vigentes con el contador o revisor fiscal.
+2. Resolver ~20 facturas reales a mano y comparar contra el motor.
+3. Correr un mes en paralelo con el proceso manual.
+4. Documentar los puntos ciegos: honorarios con excepción de 3.300 UVT, exclusiones de reteIVA y notas crédito.
+5. Publicar el repositorio y agregar el enlace a la CV.
+
+**Motor por línea de comandos** (`motor_liquidador.py`, fuera de Jupyter):
+
+```bash
+./motor_liquidador.py plantilla
+./motor_liquidador.py calcular --entrada plantilla_factura.json --usuario 'contador@empresa.com' --salida salidas
+./motor_liquidador.py casos
+./motor_liquidador.py tablas        # ver las tablas (UVT, tarifas, vigencias) que usa el motor
+```
 
 ---
 

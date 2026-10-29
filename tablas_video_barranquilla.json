@@ -1,0 +1,20 @@
+{
+  "_notas": [
+    "Tablas personalizadas para el ejemplo del video (reteICA Barranquilla).",
+    "Uso: ./motor_liquidador.py calcular --entrada ejemplo_video_retencion.json --tablas tablas_video_barranquilla.json",
+    "Las claves 'uvt' y 'retefuente' se omiten: el motor usa sus tablas 2026 por defecto (RF compras 2,5% declarante, mínimo 10 UVT).",
+    "El video usa reteICA Barranquilla 12,5 por mil (0,0125) para compras. Es una tarifa pedagógica del video: verifique la tarifa municipal vigente."
+  ],
+  "ica": [
+    {
+      "municipio": "Barranquilla",
+      "actividad": "Compras",
+      "tarifa": "0.0125",
+      "minimo_uvt": "0",
+      "fundamento": "Tarifa reteICA Barranquilla del video: 12,5 por mil para compras (verificar vigencia).",
+      "vigencia_desde": "2026-01-01",
+      "vigencia_hasta": "2026-12-31",
+      "version": "video"
+    }
+  ]
+}

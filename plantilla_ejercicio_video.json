@@ -1,0 +1,68 @@
+{
+  "_notas": [
+    "Plantilla para resolver el PRIMER ejemplo del video (compra de mercancía $63.300.000 + IVA).",
+    "Reemplazá los campos con '…' por los valores del video. Los demás campos ya están sugeridos para este ejercicio.",
+    "Ejecutá: ./motor_liquidador.py calcular --entrada este_archivo.json --tablas tablas_video_barranquilla.json",
+    "Resultados esperados: IVA $12.027.000 | RF $1.582.500 | ReteICA $791.250 | Neto $72.953.250 (ver guía en PDF)."
+  ],
+  "comprador": {
+    "nit": "…",
+    "razon_social": "…",
+    "tipo": "Jurídica",
+    "agente_retefuente": true,
+    "agente_reteiva": false,
+    "agente_reteica": true,
+    "municipio": "Barranquilla",
+    "responsable_iva": true,
+    "obligado_contabilidad": true,
+    "regimen": "Ordinario",
+    "direccion": "…",
+    "gran_contribuyente": false,
+    "entidad_estatal": false,
+    "emisor_tarjetas": false
+  },
+  "proveedor": {
+    "nit": "…",
+    "razon_social": "…",
+    "tipo": "Jurídica",
+    "residente": true,
+    "declarante": true,
+    "responsable_iva": true,
+    "simple": false,
+    "autorretenedor": false,
+    "autorretencion_especial": false,
+    "gran_contribuyente": false,
+    "actividad_ciiu": "…",
+    "municipio": "Barranquilla",
+    "rut_recibido": true,
+    "soporte_no_declarante": true,
+    "actividad_gravada_ica": true
+  },
+  "operaciones": [
+    {
+      "tipo_documento": "Factura electrónica",
+      "numero": "…",
+      "fecha_emision": "2026-…-…",
+      "fecha_pago": "2026-…-…",
+      "concepto": "Compra de bienes",
+      "descripcion": "Compra de mercancía para vender (televisores)",
+      "base": "…",
+      "tarifa_iva": "0.19",
+      "iva": null,
+      "total": null,
+      "total_incluye_iva": false,
+      "descuentos": "0",
+      "moneda": "COP",
+      "trm": null,
+      "forma_pago": "Contado",
+      "valor_pagado": null,
+      "retencion_ya_practicada": false,
+      "factura_validada": true,
+      "orden_compra": true,
+      "acta_recibido": true,
+      "periodo_cerrado": false,
+      "iva_excluido": false,
+      "centro_costo": "COMPRAS"
+    }
+  ]
+}

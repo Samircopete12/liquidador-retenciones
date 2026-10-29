@@ -6,6 +6,8 @@
 **Base mínima de compras:** 10 UVT = $523.740.
 
 > **Advertencia:** esta tabla es un resumen pedagógico. La tabla oficial tiene más conceptos, excepciones y reglas de transición. Antes de usar un caso en producción, verifica la norma vigente, la UVT y la fecha de la operación. No memorices las 77 filas: aprende las familias y consulta las especiales.
+>
+> Para la lectura por tipo de comprador y vendedor, ver [`matriz-comprador-vendedor.md`](matriz-comprador-vendedor.md).
 
 ---
 
