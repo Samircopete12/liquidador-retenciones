@@ -139,6 +139,10 @@ Este proyecto traduce la teoría a una **tabla de decisión con memoria**: qué 
 - Caso 15: la tabla muestra la factura completa; el pago del 50% tiene base $500.000, IVA $95.000, retefuente $20.000, reteIVA $14.250 y neto $560.750. Queda un saldo de $595.000.
 - Caso 16: factura original $2.000.000 + IVA $380.000; nota crédito del 50% por $1.190.000; saldo $1.190.000; retefuente sobre el saldo $40.000; neto $1.150.000.
 
+![Tabla de control de los 16 casos](docs/capturas/casos.png)
+
+*Captura de la tabla de control con datos ficticios.*
+
 ---
 
 ## 6. Cómo usar la tabla de control
@@ -293,6 +297,14 @@ El motor está listo para **marcha blanca y doble verificación**. Para llamarlo
 ./motor_liquidador.py casos
 ./motor_liquidador.py tablas        # ver las tablas (UVT, tarifas, vigencias) que usa el motor
 ```
+
+![Salida real del motor](docs/capturas/motor.png)
+
+*Salida real para una compra en Barranquilla con tablas personalizadas de reteICA.*
+
+![Asientos generados por el motor](docs/capturas/asientos.png)
+
+*Asientos de causación y pago: débitos = créditos.*
 
 ---
 
